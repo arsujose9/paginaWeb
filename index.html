@@ -1,1 +1,1218 @@
-hola mundo
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAF Drywall Finish LLC - Precision in Every Detail</title>
+    <link rel="icon" href="img/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Oswald:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #e63946;
+            --primary-dark: #d62828;
+            --secondary: #212529;
+            --accent: #f77f00;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--dark);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+        }
+
+        .company-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .company-name span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23212529"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(230, 57, 70, 0.03) 10px,
+                    rgba(230, 57, 70, 0.03) 20px);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: slideInDown 1s ease;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero .tagline {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            animation: slideInUp 1s ease 0.2s both;
+            color: var(--primary);
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            animation: fadeIn 1s ease 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(230, 57, 70, 0.1);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            min-width: 200px;
+            animation: zoomIn 1s ease 0.6s both;
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px);
+            background: rgba(230, 57, 70, 0.2);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .mission-box,
+        .vision-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mission-box:hover,
+        .vision-box:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.2);
+        }
+
+        .mission-box h4,
+        .vision-box h4 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .reason-card {
+            background: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(230, 57, 70, 0.2);
+            border-top-width: 8px;
+        }
+
+        .reason-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .reason-card h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            text-transform: uppercase;
+        }
+
+        .reason-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .services .section-title {
+            color: var(--white);
+        }
+
+        .services .section-subtitle {
+            color: var(--gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--secondary);
+            padding: 2.5rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(230, 57, 70, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card ul li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .service-card ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--light);
+        }
+
+        .gallery-carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 5px solid var(--dark);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            background: var(--dark);
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            border: none;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--white);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+
+        .carousel-nav:hover {
+            background: var(--primary-dark);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 0;
+            clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+        }
+
+        .carousel-next {
+            right: 0;
+        }
+
+        .carousel-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem;
+            border-left: 5px solid var(--primary);
+        }
+
+        .contact-info h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            width: 50px;
+            text-align: center;
+        }
+
+        .contact-item div {
+            flex: 1;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.2rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-family: 'Oswald', sans-serif;
+            border: 2px solid var(--primary);
+        }
+
+        .contact-btn:hover {
+            background: transparent;
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .map-container {
+            overflow: hidden;
+            height: 100%;
+            min-height: 500px;
+            border: 5px solid var(--dark);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 5px solid var(--primary);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-tagline {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.5rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .about-grid,
+            .mission-vision-grid,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .carousel-container {
+                height: 400px;
+            }
+
+            .carousel-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .contact-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="AAF Drywall Finish LLC">
+                <span class="company-name"><span>AAF</span> DRYWALL</span>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1><span>PRECISION</span> IN EVERY DETAIL</h1>
+            <p class="tagline">PROFESSIONAL DRYWALL & REMODELING</p>
+            <p class="description">AAF Drywall Finish LLC is a professional remodeling, drywall, and painting company
+                with over 10 years of experience serving residential properties in North Carolina. We specialize in
+                drywall installation and finishing, painting, flooring, framing, and interior remodeling services.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Quality Work</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Professional Team</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <p class="section-subtitle">Skilled tradesmen with a decade of proven excellence</p>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>At AAF Drywall Finish LLC, we are skilled tradesmen with a strong background in drywall systems,
+                        interior construction, and finishing work. With a decade of hands-on experience, we work with
+                        homeowners, landlords, and contractors who need reliable professionals that deliver consistent,
+                        high-quality results.</p>
+                    <p>Our team is known for clean work, attention to detail, and dependable results. From hanging and
+                        finishing drywall to complete interior upgrades, we focus on quality craftsmanship and customer
+                        satisfaction on every project.</p>
+                </div>
+                <div class="mission-vision-grid">
+                    <div class="mission-box">
+                        <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                        <p>Our mission is to deliver high-quality drywall, painting, and remodeling services with
+                            professionalism, precision, and integrity. We are committed to craftsmanship and customer
+                            satisfaction on every project.</p>
+                    </div>
+                    <div class="vision-box">
+                        <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                        <p>Our vision is to be a trusted drywall and remodeling company in North Carolina, known for
+                            reliable service, skilled workmanship, and long-term client relationships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 4rem; font-size: 2.5rem;">Why Choose Us</h3>
+            <div class="why-choose">
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h4>Expert Experience</h4>
+                    <p>10 years of hands-on experience in drywall, painting, and remodeling services.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>Specialized Expertise</h4>
+                    <p>Specialized drywall and finishing expertise with professional techniques.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-broom"></i></div>
+                    <h4>Clean Workmanship</h4>
+                    <p>Clean, professional workmanship that respects your property and space.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-handshake"></i></div>
+                    <h4>Reliable Communication</h4>
+                    <p>Reliable timelines and honest communication throughout your project.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-star"></i></div>
+                    <h4>Quality Focused</h4>
+                    <p>Quality-focused remodeling solutions that exceed expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-subtitle">Complete construction and remodeling solutions</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-th-large"></i></div>
+                    <h3>Drywall Services</h3>
+                    <p>Professional drywall installation and finishing</p>
+                    <ul>
+                        <li>Drywall hanging and installation</li>
+                        <li>Drywall finishing and taping</li>
+                        <li>Texture application</li>
+                        <li>Drywall repairs and patches</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+                    <h3>Painting Services</h3>
+                    <p>Expert interior painting solutions</p>
+                    <ul>
+                        <li>Interior painting</li>
+                        <li>Surface preparation and priming</li>
+                        <li>Repaints and touch-ups</li>
+                        <li>Cabinet and trim painting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Remodeling Services</h3>
+                    <p>Complete interior transformation</p>
+                    <ul>
+                        <li>Interior remodeling projects</li>
+                        <li>Space upgrades and improvements</li>
+                        <li>Property refresh and renovation work</li>
+                        <li>Custom remodeling solutions</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Flooring Services</h3>
+                    <p>Professional flooring installation</p>
+                    <ul>
+                        <li>Flooring installation</li>
+                        <li>Floor repairs and replacements</li>
+                        <li>Multiple flooring types</li>
+                        <li>Expert craftsmanship</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>Framing Services</h3>
+                    <p>Structural framing expertise</p>
+                    <ul>
+                        <li>Interior framing</li>
+                        <li>Structural framing support</li>
+                        <li>Custom framing solutions</li>
+                        <li>Professional construction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p class="section-subtitle">Quality craftsmanship in every project</p>
+
+            <div class="gallery-carousel">
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="carousel-slide active">
+                        <img src="img/1.jpeg" alt="Drywall Project 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/2.jpeg" alt="Drywall Project 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/3.jpeg" alt="Drywall Project 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/4.jpeg" alt="Drywall Project 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/5.jpeg" alt="Drywall Project 5">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/6.jpeg" alt="Drywall Project 6">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/7.jpeg" alt="Drywall Project 7">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/8.jpeg" alt="Drywall Project 8">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/10.jpeg" alt="Drywall Project 10">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/11.jpeg" alt="Drywall Project 11">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/12.jpeg" alt="Drywall Project 12">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/13.jpeg" alt="Drywall Project 13">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/14.jpeg" alt="Drywall Project 14">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/15.jpeg" alt="Drywall Project 15">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/16.jpeg" alt="Drywall Project 16">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/17.jpeg" alt="Drywall Project 17">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/18.jpeg" alt="Drywall Project 18">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/19.jpeg" alt="Drywall Project 19">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/20.jpeg" alt="Drywall Project 20">
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-nav carousel-next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-counter" id="counter">1 / 19</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get a free estimate for your project</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-user contact-icon"></i>
+                        <div>
+                            <strong>Owner</strong>
+                            Amancio Arzu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            919-333-1539 / 919-793-6620
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div>
+                            <strong>Email</strong>
+                            arsujose967@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div>
+                            <strong>Address</strong>
+                            7707 Zephyr Pl, Raleigh, NC 27603
+                        </div>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <a href="tel:9193331539" class="contact-btn">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/19193331539" class="contact-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:arsujose967@gmail.com" class="contact-btn">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="sms:9193331539" class="contact-btn">
+                            <i class="fas fa-sms"></i> Text Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.567890123456!2d-78.7!3d35.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ4JzAwLjAiTiA3OMKwNDInMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-tagline">PRECISION IN EVERY DETAIL</p>
+            <p>&copy; 2026 AAF Drywall Finish LLC. All rights reserved.</p>
+            <p>Professional remodeling, drywall, and painting services in North Carolina</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Gallery Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        const counter = document.getElementById('counter');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            counter.textContent = `${index + 1} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const carouselContainer = document.getElementById('carouselContainer');
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        }
+
+        // Auto-play carousel (optional)
+        let autoplayInterval = setInterval(nextSlide, 5000);
+
+        // Pause autoplay on hover
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+
+</html>
